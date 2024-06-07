@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 import SectionHeading from "./section-heading";
 import {
   VerticalTimeline,
@@ -20,7 +20,19 @@ export default function Experience() {
   const { ref } = useSectionInView("Experience");
   const { theme } = useTheme();
 
-  const experiencesData = [
+  interface ExperienceItem {
+    id?: number;
+    title: string;
+    location: ReactNode;
+    description: ReactNode;
+    icon: ReactNode;
+    date: string;
+    logo: any;
+    width?: number;
+    height?: number;
+  }
+
+  const experiencesData: ExperienceItem[] = [
     {
       id: 1,
       title: "Software Developer Intern",
@@ -168,9 +180,10 @@ export default function Experience() {
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My experience</SectionHeading>
       <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => (
-          <React.Fragment key={index}>
+        <div>
+          {experiencesData.map((item, index) => (
             <VerticalTimelineElement
+              key={index}
               contentStyle={{
                 position: "relative",
                 background:
@@ -193,37 +206,41 @@ export default function Experience() {
                 fontSize: "1.5rem",
               }}
             >
-              <h2
-                style={{
-                  fontSize: "18px",
-                  color: theme === "light" ? "black" : "#fafafa",
-                }}
-                className="font-bold capitalize md:max-w-none max-w-[150px]"
-              >
-                {item.title}
-              </h2>
+              <>
+                <h2
+                  style={{
+                    fontSize: "18px",
+                    color: theme === "light" ? "black" : "#fafafa",
+                  }}
+                  className="font-bold capitalize md:max-w-none max-w-[150px]"
+                >
+                  {item.title}
+                </h2>
 
-              <div
-                style={{
-                  position: "absolute",
-                  top: item.id === 1 ? "24px" : "15px",
-                  right: "10px",
-                }}
-              >
-                <Image
-                  src={item.logo}
-                  alt="image description"
-                  width={item?.width ?? 50}
-                  height={item?.height ?? 50}
-                />
-              </div>
-              <p className="font-normal !mt-0 text-blue-800">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                {item.description}
-              </p>
+                <div
+                  style={{
+                    position: "absolute",
+                    top: item.id === 1 ? "24px" : "15px",
+                    right: "10px",
+                  }}
+                >
+                  <Image
+                    src={item.logo}
+                    alt="image description"
+                    width={item?.width ?? 50}
+                    height={item?.height ?? 50}
+                  />
+                </div>
+                <p className="font-normal !mt-0 text-blue-800">
+                  {item.location}
+                </p>
+                <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+                  <>{item.description}</>
+                </p>
+              </>
             </VerticalTimelineElement>
-          </React.Fragment>
-        ))}
+          ))}
+        </div>
       </VerticalTimeline>
     </section>
   );
