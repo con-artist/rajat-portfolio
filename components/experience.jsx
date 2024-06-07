@@ -20,19 +20,7 @@ export default function Experience() {
   const { ref } = useSectionInView("Experience");
   const { theme } = useTheme();
 
-  interface ExperienceItem {
-    id?: number;
-    title: string;
-    location: ReactNode;
-    description: ReactNode;
-    icon: ReactNode;
-    date: string;
-    logo: any;
-    width?: number;
-    height?: number;
-  }
-
-  const experiencesData: ExperienceItem[] = [
+  const experiencesData = [
     {
       id: 1,
       title: "Software Developer Intern",
