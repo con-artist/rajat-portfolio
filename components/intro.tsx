@@ -97,7 +97,7 @@ export default function Intro() {
         </a>
         <a
           className="group bg-gray-850 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-white border-opacity-40 md:px-7 md:py-3 md:gap-2 sm:p-4 sm:rounded-full"
-          href="https://drive.google.com/file/d/1HH14UeH5baS9EZ2S22IcId_9wRH4bd3K/view?usp=sharing"
+          href="https://drive.google.com/file/d/1sJ2HFp6tTQu51_dgn82g75Q_gOYYRkZt/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
