@@ -23,7 +23,7 @@ export default function Experience() {
   const experiencesData = [
     {
       id: 1,
-      title: "Software Developer Intern",
+      title: "Software Engineer",
       location: (
         <p className="font-normal !mt-0">
           <span style={{ color: "#134ca7", fontWeight: 700 }}>Cloud</span>
@@ -51,8 +51,9 @@ export default function Experience() {
               className="mb-2"
               style={{ color: theme === "light" ? "#414141" : "#d4d4d4" }}
             >
-              👉 Reduced app.js bundle size and optimized login page, boosting
-              performance by 60% and implementing enhanced security measures.
+              👉 Implemented enhanced security by creating a user inactivity
+              management system to automatically logout the user after certain
+              period of inactivity.
             </li>
             <li
               className="mb-2"
@@ -60,6 +61,41 @@ export default function Experience() {
             >
               👉 Developed reports page for downloading reports and monitoring
               live report generation.
+            </li>
+          </ul>
+        </div>
+      ),
+      icon: React.createElement(CgWorkAlt),
+      date: "April 2023 - Present",
+      logo: theme === "light" ? darkCloudsek : whiteCloudsek,
+      width: 100,
+      height: 50,
+    },
+    {
+      id: 2,
+      title: "Software Developer Intern",
+      location: (
+        <p className="font-normal !mt-0">
+          <span style={{ color: "#134ca7", fontWeight: 700 }}>Cloud</span>
+          <span
+            style={{
+              color: theme === "light" ? "black" : "#fafafa",
+              fontWeight: 700,
+            }}
+          >
+            SEK
+          </span>
+        </p>
+      ),
+      description: (
+        <div className="job-description">
+          <ul className=" list-inside">
+            <li
+              className="mb-2"
+              style={{ color: theme === "light" ? "#414141" : "#d4d4d4" }}
+            >
+              👉 Reduced app.js bundle size and optimized login page, boosting
+              performance by 60% and implementing enhanced security measures.
             </li>
             <li
               className="mb-2"
@@ -72,7 +108,7 @@ export default function Experience() {
         </div>
       ),
       icon: React.createElement(CgWorkAlt),
-      date: "December 2023 - June 2024",
+      date: "December 2023 - March 2024",
       logo: theme === "light" ? darkCloudsek : whiteCloudsek,
       width: 100,
       height: 50,
